@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'CallistaCustomFont';
+    src: url('../fonts/Callista.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'LED1';
+    src: url('../fonts/LEDBDREV.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'proximaNova-regular';
+    src: url('../fonts/proximanova_regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+ 
+  @font-face {
+    font-family: 'proximaNovaBold';
+    src: url('../fonts/proximanova_bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+ 
+  @font-face {
+    font-family: 'proximaNova-extrabold';
+    src: url('../fonts/proximanova_extrabold.otf') format('opentype');
+    /* font-weight: normal;
+    font-style: normal; */
+  }
+ 
+  @font-face {
+    font-family: 'proximaNova-light';
+    src: url('../fonts/proximanova_light.otf') format('opentype');
+    /* font-weight: normal;
+    font-style: normal; */
+  }
+ 
+  @font-face {
+    font-family: 'proximaNova-bold-italic';
+    src: url('../fonts/proximanova_blackit.otf') format('opentype');
+    /* font-weight: normal;
+    font-style: normal; */
+  }
+ 
+  @font-face {
+    font-family: 'proximaNovaItalic';
+    src: url('../fonts/proximanova_boldit.otf') format('opentype');
+    /* font-weight: normal;
+    font-style: normal; */
+  }
+ 

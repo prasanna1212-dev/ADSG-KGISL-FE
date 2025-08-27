@@ -1,0 +1,191 @@
+/* Container for the entire approved users section */
+.approved-users-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    height: 90vh;
+    justify-content: space-between;
+  }
+  
+  /* Title for the approved users section */
+  .approved-users-title {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Container for holding the user cards */
+  .approved-users-cards {
+    display: grid;
+    flex-direction: column;
+    flex-wrap: wrap !important;
+    gap: 50px !important;
+    width: 100vw !important;
+    max-width: 1000px !important;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Individual card styling */
+  .approved-users-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+  }
+  
+  .approved-users-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Body section of the card containing the username */
+  .approved-users-card-body {
+    padding: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .approved-users-username {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Footer section of the card with the action button */
+  .approved-users-card-footer {
+    padding: 12px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styling for the deactivate button */
+  .approved-users-deactivate-button {
+    background-color: #ff4d4f;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .approved-users-deactivate-button:hover {
+    background-color: #e04345;
+  }
+
+
+  
+  
+  /* Responsive adjustments for mobile devices */
+@media (max-width: 600px) {
+  .approved-users-title {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 15px;
+  }
+
+  .approved-users-cards {
+      width: 80%;
+  }
+
+  .approved-users-card {
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 6px;
+  }
+
+  .approved-users-card-body {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .approved-users-username {
+      font-size: 1.1rem;
+  }
+
+  .approved-users-deactivate-button {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+  }
+}
+
+/* Tablet view adjustments */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .approved-users-title {
+      font-size: 1.65rem;
+      margin-bottom: 20px;
+  }
+
+  .approved-users-cards {
+      max-width: 100%;
+      flex-direction: row;
+      justify-content: center;
+      gap: 16px;
+  }
+
+  .approved-users-card {
+      width: 250px;
+  }
+
+  .approved-users-card-body {
+      gap: 15px;
+  }
+
+  .approved-users-username {
+      font-size: 1.15rem;
+  }
+
+  .approved-users-deactivate-button {
+      font-size: 0.95rem;
+      padding: 9px 18px;
+  }
+}
+
+/* Large screens / LED TVs */
+@media (min-width: 1025px) {
+  .approved-users-container {
+      padding: 30px;
+  }
+
+  .approved-users-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+  }
+
+  .approved-users-cards {
+      flex-direction: row;
+      gap: 30px;
+      justify-content: center;
+      max-width: 100%;
+  }
+
+  .approved-users-card {
+      width: 380px;
+  }
+
+  .approved-users-card-body {
+      gap: 20px;
+  }
+
+  .approved-users-username {
+      font-size: 1.25rem;
+  }
+
+  .approved-users-deactivate-button {
+      font-size: 1.1rem;
+      padding: 12px 25px;
+  }
+}

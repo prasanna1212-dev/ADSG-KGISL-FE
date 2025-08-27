@@ -1,0 +1,111 @@
+.login-dashboard-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+ 
+    z-index: 1000;
+}
+
+.modal-close-icon {
+    position: absolute;
+    top: 10px; /* Adjust as per the modal padding */
+    right: 10px; /* Adjust as per the modal padding */
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 1rem; /* Adjust size as needed */
+}
+
+.home-logo {
+    /* position: absolute;
+    top: 20px;
+    left: 20px; */
+    width: 120px !important;
+    height: auto;
+    border-radius: 6px;
+
+}
+
+.login-dashboard-modal{
+    width: 350px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    background: rgba(255, 255, 255, 0.1) !important; /* Transparent white background */
+    backdrop-filter: blur(6px) !important; /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Subtle border */
+    position: relative;
+    border-radius: 8px;
+}
+
+.login-dashboard-content{
+    text-align: center;
+}
+
+/* For small screens (mobile devices) */
+@media (max-width: 576px) {
+    .login-dashboard-container {
+        padding: 20px;
+       
+    }
+
+    .login-dashboard-modal {
+        width: 90%; /* Take most of the screen width */
+        padding: 15px;
+    }
+
+    .home-logo {
+        width: 80px;
+    }
+}
+
+/* For medium screens (tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .login-dashboard-modal {
+        width: 70%; /* Moderate width for tablets */
+    }
+
+    .home-logo {
+        width: 100px;
+    }
+}
+
+/* For large screens (desktops) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .login-dashboard-modal {
+        width: 400px; /* Slightly larger modal */
+    }
+
+    .home-logo {
+        width: 120px;
+    }
+}
+
+/* For extra-large screens (LED TVs and large monitors) */
+@media (min-width: 1201px) {
+    .login-dashboard-container {
+        background-size: cover; /* Ensure the background scales properly */
+    }
+
+    .login-dashboard-modal {
+        width: 400px; /* Larger modal for big screens */
+    }
+
+    .home-logo {
+        width: 150px;
+    }
+}
+

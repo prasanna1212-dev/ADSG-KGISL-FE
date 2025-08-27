@@ -1,0 +1,321 @@
+.approval-request-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    justify-content: space-between;
+  }
+  
+  .approval-request-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .user-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust minmax to fit your card width */
+    gap: 1rem;
+  }
+  
+  .custom-card {
+    width: 100%; /* Adjust width as needed */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+  }
+  
+  .custom-card-body {
+    padding: 16px;
+  }
+  
+  .custom-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .custom-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  
+  .custom-user-name {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .custom-user-username {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .custom-user-request {
+    color: #555;
+    margin: 8px 0;
+  }
+  
+  .custom-card-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .custom-decline-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .custom-decline-button:hover {
+    background-color: #e04345;
+  }
+  
+  .custom-approve-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .custom-approve-button:hover {
+    background-color: #45a049;
+  }
+  
+  .loader-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent backdrop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Make sure it's on top of other elements */
+  }
+   
+  .loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+   
+  /* Spinner animation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Mobile View */
+@media screen and (max-width: 480px) {
+  .approval-request-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .user-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .custom-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .custom-card-body {
+    padding: 12px;
+  }
+
+  .custom-user-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-user-username {
+    font-size: 0.8rem;
+  }
+
+  .custom-card-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* Tablet View (Small devices) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .approval-request-title {
+    font-size: 1.4rem;
+  }
+
+  .user-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .custom-card {
+    width: 45%;
+    margin: 10px;
+  }
+
+  .custom-avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .custom-card-body {
+    padding: 14px;
+  }
+
+  .custom-user-info {
+    gap: 12px;
+  }
+
+  .custom-user-username {
+    font-size: 0.9rem;
+  }
+
+  .custom-card-footer {
+    gap: 15px;
+  }
+}
+
+/* Desktop View (Larger devices) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .approval-request-title {
+    font-size: 1.6rem;
+  }
+
+  .user-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .custom-card {
+    width: 30%;
+    margin: 15px;
+  }
+
+  .custom-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .custom-card-body {
+    padding: 16px;
+  }
+
+  .custom-user-info {
+    gap: 15px;
+  }
+
+  .custom-user-username {
+    font-size: 1rem;
+  }
+
+  .custom-card-footer {
+    gap: 20px;
+  }
+}
+
+/* Large Desktop View */
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  .approval-request-title {
+    font-size: 1.8rem;
+  }
+
+  .user-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .custom-card {
+    width: 35%;
+    margin: 20px;
+  }
+
+  .custom-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .custom-card-body {
+    padding: 18px;
+  }
+
+  .custom-user-info {
+    gap: 18px;
+  }
+
+  .custom-user-username {
+    font-size: 1.1rem;
+  }
+
+  .custom-card-footer {
+    gap: 25px;
+  }
+}
+
+/* TV View (LED TV, very large screens) */
+@media screen and (min-width: 1601px) {
+  .approval-request-title {
+    font-size: 2rem;
+  }
+
+  .user-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .custom-card {
+    width: 40%;
+    margin: 25px;
+  }
+
+  .custom-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .custom-card-body {
+    padding: 20px;
+  }
+
+  .custom-user-info {
+    gap: 20px;
+  }
+
+  .custom-user-username {
+    font-size: 1.2rem;
+  }
+}

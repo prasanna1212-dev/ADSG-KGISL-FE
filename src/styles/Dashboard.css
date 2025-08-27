@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
+.css-1yuhvjn{
+    margin-top: 80px !important;
+}
+
+.otp-flip-box-dashboard {
+    display: flex;
+    gap: 10px;
+    background: #ffffff;
+    padding: 8px 18px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 12px rgba(184, 180, 180, 0.8);
+  }
+  
+  .otp-digit-box-dashboard {
+    background-color: #e2e2e2;
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow:
+      inset 0 -2px 0 #dddddd,
+      inset 0 3px 0 #dfdfdf,
+      0 0 10px rgba(238, 238, 238, 0.7);
+  }
+  
+  .otp-digit-box-dashboard::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color: rgba(250, 250, 250, 0.4);
+    transform: translateY(-50%);
+  }
+  
+  .otp-digit-dashboard {
+    font-family: 'proximaNova-regular', sans-serif;
+    font-size: 34px;
+    color: #f34242;
+    text-shadow: 0 0 6px #f8f8f8;
+    font-weight: bold;
+  }

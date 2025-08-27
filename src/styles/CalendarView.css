@@ -1,0 +1,95 @@
+.calendar-view {
+    padding: 20px;
+
+}
+
+.calendar-container {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@font-face {
+    font-family: 'CallistaCustomFont';
+    src: url('../fonts/Callista.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the custom font to the class */
+.admin-dashboard-header-fontstyle h1 {
+    font-family: 'CallistaCustomFont', sans-serif;
+    color: #df3435;
+    margin-bottom: 30px !important;
+}
+
+.admin-dashboard-header-first-character {
+    color: #143264;
+}
+
+.password-update-info-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@media (min-width: 1440px) {
+    .calendar-container {
+        max-width: 100%; /* Covers a larger portion of the container */
+        height: 120%; /* Adjusts dynamically based on content */
+    }
+}
+
+@media (min-width: 1920px) {
+    .calendar-container {
+        max-width: 90%; /* Increases width for larger screens */
+        height: auto; /* Ensures proper scaling */
+    }
+}
+
+@media (min-width: 2560px) {
+    .calendar-container {
+        max-width: 95%; /* Almost the entire screen for very large resolutions */
+        height: auto; /* Dynamically adjust */
+    }
+}

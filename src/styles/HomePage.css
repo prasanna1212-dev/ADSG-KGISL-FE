@@ -1,0 +1,264 @@
+/* Fullscreen Video Background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the screen */
+    z-index: -1; /* Puts the video behind the content */
+  }
+  
+  /* Overall Page Container */
+  .home-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff; /* Text color for contrast with video */
+    font-family: Arial, sans-serif;
+  }
+
+  .logo-top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  /* Top-Right Logo */
+  .logo-top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  
+  .count-top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+   .otp-flip-box {
+    display: flex;
+    gap: 10px;
+    background: #0a0a0a;
+    padding: 8px 18px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 12px rgba(138, 49, 49, 0.8);
+  }
+  
+  .otp-digit-box {
+    background-color: #413e3e;
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow:
+      inset 0 -2px 0 #000,
+      inset 0 3px 0 #222,
+      0 0 10px rgba(255, 0, 0, 0.7);
+  }
+  
+  .otp-digit-box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color: rgba(255, 0, 0, 0.4);
+    transform: translateY(-50%);
+  }
+  
+  .otp-digit {
+    font-family: 'proximaNova-regular', sans-serif;
+    font-size: 34px;
+    color: #e7c2c2;
+    text-shadow: 0 0 6px #ff1a1a;
+    font-weight: bold;
+  }
+  
+
+  .logo {
+    width: 120px; /* Adjust logo size */
+    height: auto;
+    cursor: pointer;
+  }
+  
+  /* Centered Content */
+  .home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .home-content button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Keyframe for zoom-in animation */
+@keyframes zoomIn {
+    from {
+      transform: scale(0.5); /* Start smaller */
+      opacity: 0; /* Start transparent */
+    }
+    to {
+      transform: scale(1); /* Full size */
+      opacity: 1; /* Fully visible */
+    }
+  }
+  
+  /* Apply zoom-in animation to the image */
+  .header-text-img {
+    animation: zoomIn 3s ease-out; /* Duration and easing */
+    transform-origin: center; /* Ensures zoom happens from the center */
+    opacity: 0; /* Ensures animation starts from 0 opacity */
+    animation-fill-mode: forwards; /* Keeps final state after animation */
+  }
+  
+
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.5); /* Start smaller */
+      opacity: 0; /* Start transparent */
+    }
+    to {
+      transform: scale(1); /* Full size */
+      opacity: 1; /* Fully visible */
+    }
+  }
+  
+  /* Apply zoom-in animation to the image */
+  .description-text-img {
+    animation: zoomIn 1.5s ease-out; /* Duration and easing */
+    transform-origin: center; /* Ensures zoom happens from the center */
+    opacity: 0; /* Ensures animation starts from 0 opacity */
+    animation-fill-mode: forwards; /* Keeps final state after animation */
+  }
+
+  /* Responsive Design */
+
+/* Small Devices (Mobile, 320px to 480px) */
+@media (max-width: 480px) {
+    .home-container {
+      padding: 10px;
+    }
+  
+    .home-content img {
+        width: 100vw;
+    }
+    
+  
+    .logo {
+      width: 70px;
+    }
+  }
+  
+  /* Medium Devices (Tablets, 481px to 768px) */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .home-container {
+      padding: 15px;
+    }
+  
+    .home-content h1 {
+      font-size: 2.2rem;
+    }
+  
+    .home-content p {
+      font-size: 1rem;
+    }
+  
+    .home-content button {
+      padding: 9px 18px;
+      font-size: 1rem;
+    }
+  
+    .logo {
+      width: 85px;
+    }
+  }
+  
+  /* Large Devices (Desktops, 769px to 1024px) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .home-container {
+      padding: 20px;
+    }
+  
+    .home-content h1 {
+      font-size: 2.8rem;
+    }
+  
+    .home-content p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+  
+    .home-content button {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+    }
+  
+    .logo {
+      width: 100px;
+    }
+  }
+  
+  /* Extra Large Devices (Wide Screens, 1025px and above) */
+  @media (min-width: 1025px) {
+    .home-container {
+      padding: 30px;
+    }
+  
+    .home-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+  
+    .home-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+  
+    .home-content button {
+      padding: 12px 24px;
+      font-size: 1.2rem;
+    }
+  
+    .logo {
+      width: 120px;
+    }
+  }
+  
+
+/* Modal styling */
+.MuiDialog-paper {
+  border-radius: 20px !important;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  background: rgba(255, 255, 255, 0.1) !important; /* Transparent white background */
+  backdrop-filter: blur(6px) !important; /* Glassmorphism effect */
+  border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Subtle border */
+}
+
+
+
+
+
+
+
+
+
+  

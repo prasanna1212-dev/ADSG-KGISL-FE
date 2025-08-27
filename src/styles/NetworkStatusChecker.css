@@ -1,0 +1,49 @@
+.network-status-banner {
+    width: 100%;
+    background-color: #ffecec; /* light red */
+    border-bottom: 2px solid #ffb3b3; /* subtle separation */
+    color: #b71c1c;
+    text-align: center;
+    padding: 12px 20px;
+    z-index: 1000;
+    position: relative; /* so it sits above the content but not covering header */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .network-status-banner .banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .network-status-banner .icon {
+    font-size: 24px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  .network-status-banner h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .network-status-banner p {
+    margin: 0;
+    font-size: 13px;
+    color: #333;
+  }
+  
+  /* Fade in */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Pulsing icon */
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+  }
+  

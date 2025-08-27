@@ -1,0 +1,223 @@
+.report-section-container{
+    padding: 20px;
+    flex: 1;
+}
+
+/* Main container */
+.report-section-form-container {
+    padding: 20px;
+    
+    
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titles */
+  .report-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .report-section-description {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Icons */
+  .report-section-icon {
+    color: #4a90e2;
+    font-size: 22px;
+  }
+  
+  .report-section-email-icon {
+    color: #009688;
+  }
+  
+  .report-section-cc-icon,
+  .report-section-bcc-icon {
+    color: #ff9800;
+  }
+  
+  .report-section-schedule-icon {
+    color: #4caf50;
+  }
+  
+  .report-section-download-icon {
+    color: #e91e63;
+  }
+  
+  /* Report Schedule */
+  .report-section-schedule-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .report-section-schedule-radio {
+    margin-bottom: 15px;
+  }
+  
+  .report-section-schedule-container {
+    width: 100%;
+  }
+  
+  /* Select and Time Picker */
+  .report-section-week-select,
+  .report-section-month-select {
+    width: 150px;
+  }
+  
+  .report-section-time-picker {
+    width: 100%;
+  }
+  
+  /* Download Reports */
+  .report-section-download-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .report-section-download-container {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .report-section-card {
+    background: #0d253f;
+    color: white;
+    /* width: 48%; */
+    text-align: center;
+    padding: 12px;
+  }
+  
+  .report-section-card p {
+    margin-bottom: 5px;
+  }
+  
+  .report-section-download-btn {
+    color: white !important;
+  }
+  
+  /* Buttons */
+  .report-section-actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .report-section-cancel-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+  }
+  
+  .report-section-save-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+
+  .report-sechdule-card{
+    border: 1.5px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 1px 1px 4px rgba(48, 47, 47, 0.1);
+  }
+
+  .report-schedule-card-head{
+    font-size: 1.1rem;
+    padding-bottom:10px ;
+    font-weight: bold;
+    color: gray;
+  }
+
+  .report-sechdule-card-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+  }
+
+  .report-download-card-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+  }
+
+  .report-download-card{
+    background-color:#F5F5F5 ;
+    padding:10px 15px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+
+  }
+
+  .report-section-schedule-title{
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    font-family: 'proximaNovaBold';
+  }
+  
+
+  .report-download-head{
+    font-size: 1.1rem;
+    /* color: gray; */
+    letter-spacing:1px;
+    color:black;
+  }
+
+  .report-download-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .download-report-button{
+    background-color: #143275;
+    width: -webkit-fill-available;
+    display: flex;
+    color: white;
+    border-radius: 5px;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    letter-spacing: 1px;
+  }
+
+  .report-section-entire{
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 40px;
+  }
+
+  .mail-schedule-button-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  .mail-schedule-button{
+    background-color: #143275;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    padding: 10px;
+    letter-spacing: 1px;
+  }
+
+  .mail-schedule-button:hover{
+    background-color: #007bff !important;
+    color: white !important;
+  }
+  
+  
+  

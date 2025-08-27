@@ -1,0 +1,153 @@
+/* Admin Dashboard Styles */
+
+/* Overall container */
+.admin-dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Sidebar styles */
+.admin-sidebar {
+  width: 250px;
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo styles */
+.admin-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin-logo-img {
+  max-width: 120px;
+  height: auto;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+/* Navigation styles */
+.admin-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 0; /* Ensures the navigation aligns directly below the logo */
+  align-items: flex-start; /* Aligns navigation items to the left */
+}
+
+.admin-nav-button {
+  background-color: transparent;
+  color: #1e6db8;
+  border: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  text-align: left;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.admin-nav-button:hover,
+.admin-nav-button.active {
+  background-color: #e9b4b4;
+  color: #e23030;
+}
+
+/* General Button Styles */
+.admin-logout-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+button.logout-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.logout-button {
+  width: 12rem;
+  height: auto;
+}
+
+/* Circle Animation */
+button.logout-button .logout-circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #e23b3b; /* Red for logout */
+  border-radius: 1.625rem;
+}
+
+button.logout-button .logout-icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.625rem;
+  margin: auto;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: #fff; /* White icon color */
+}
+
+/* Button Text Styling */
+button.logout-button .logout-button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #e74c3c; /* Red text color */
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Hover Effects */
+button.logout-button:hover .logout-circle {
+  width: 100%;
+}
+
+button.logout-button:hover .logout-icon {
+  transform: translate(1rem, 0); /* Slide the icon right */
+}
+
+button.logout-button:hover .logout-button-text {
+  color: #fff;
+}
+
+
+
+/* Main content styles */
+.admin-main-content {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #ecf0f1;
+}

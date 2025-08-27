@@ -1,0 +1,549 @@
+/* Container for the entire component */
+.addaduser-activity-logs-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #eff1f3; 
+    color: #333; 
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title styling */
+.addaduser-activity-logs-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #007bff; /* Accent color (blue) */
+    letter-spacing: -0.5px;
+}
+
+/* List of log cards */
+.addaduser-activity-logs-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Individual log card */
+.addaduser-activity-logs-card {
+    background: #ffffff; /* White card background */
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid #e0e0e0;
+}
+
+.addaduser-activity-logs-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Status-based card colors */
+.addaduser-activity-logs-card--success {
+    border-left: 5px solid #4ade80; /* Green */
+}
+
+.addaduser-activity-logs-card--failed {
+    border-left: 5px solid #f87171; /* Red */
+}
+
+/* Card Header */
+.addaduser-activity-logs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.addaduser-activity-logs-timestamp {
+    font-size: 0.9rem;
+    color: #777; /* Darker grey for light theme */
+    font-style: italic;
+}
+
+/* Status Indicator (pulse animation) */
+.addaduser-activity-logs-status-indicator-wrapper {
+    position: relative;
+    width: 28px;
+    height: 28px;
+}
+
+.addaduser-activity-logs-status-indicator {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.addaduser-activity-logs-status-indicator--success {
+    background: #22c55e;
+}
+
+.addaduser-activity-logs-status-indicator--failed {
+    background: #ef4444;
+}
+
+.addaduser-activity-logs-status-indicator-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0;
+    animation: pulse 2s infinite;
+}
+
+.addaduser-activity-logs-status-indicator--success::before {
+    background: #22c55e;
+}
+
+.addaduser-activity-logs-status-indicator--failed::before {
+    background: #ef4444;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.addaduser-activity-logs-icon {
+    width: 18px;
+    height: 18px;
+    color: #fff;
+}
+
+/* Content & Details */
+.addaduser-activity-logs-message {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+.addaduser-activity-logs-bulk-summary {
+    background: #e9ecef; /* Lighter grey for light theme */
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.addaduser-activity-logs-details {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+/* Button to view report */
+.addaduser-activity-logs-view-report-btn {
+    background: #007bff; /* Blue */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.addaduser-activity-logs-view-report-btn:hover {
+    background: #0056b3;
+}
+
+/* Modal Styling */
+.addaduser-activity-logs-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255 255 255 / 0%); /* Semi-transparent black */
+    backdrop-filter: blur(8px); /* Blur effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.addaduser-activity-logs-modal-content {
+    background: #fff; /* White modal content */
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.5);
+    max-height: 80vh;
+    overflow-y: auto;
+    color: #333; /* Dark text */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.addaduser-activity-logs-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.addaduser-activity-logs-modal-title {
+    margin-bottom: 1.5rem;
+    color: #007bff; /* Blue */
+    font-size: 1.5rem;
+    border-bottom: 1px solid #ccc; /* Lighter border */
+    padding-bottom: 0.5rem;
+}
+
+.addaduser-activity-logs-modal-report-item {
+    background: #f8f9fa; /* Very light grey */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 3px solid #007bff; /* Blue accent */
+}
+
+.addaduser-activity-logs-modal-report-item p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.addaduser-activity-logs-modal-report-item strong {
+    color: #0056b3; /* Darker blue */
+}
+
+.status--success {
+    color: #4ade80;
+    font-weight: bold;
+}
+
+.status--failed {
+    color: #f87171;
+    font-weight: bold;
+}
+
+/* New creative UI for Single User Details */
+.addaduser-account-details-card {
+    background: #e9f5ff; /* Light blue background */
+    border: 1px solid #b3d9ff;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.addaduser-account-details-title {
+    color: #007bff;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.addaduser-account-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #333;
+    padding: 5px 0;
+    border-bottom: 1px dashed #c0c0c0;
+}
+
+.addaduser-account-detail-item:last-child {
+    border-bottom: none;
+}
+
+.ad-user-detail-icon {
+    color: #007bff;
+    min-width: 18px;
+}
+
+.addaduser-account-detail-item strong {
+    min-width: 100px;
+    font-weight: 500;
+    color: #0056b3;
+}
+
+/* --- Pagination Section --- */
+.addaduser-activity-logs-pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.addaduser-activity-logs-rows-per-page {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.addaduser-activity-logs-pagination-controls select {
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.addaduser-activity-logs-rows-per-page select:hover {
+    border-color: #007bff;
+}
+
+.addaduser-activity-logs-pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.addaduser-activity-logs-pagination-btn {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.addaduser-activity-logs-pagination-btn:hover:not(:disabled) {
+    background: #e9f5ff;
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.addaduser-activity-logs-pagination-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background-color: #f1f1f1;
+}
+
+.addaduser-activity-logs-page-info {
+    font-size: 0.9rem;
+    color: #555;
+    min-width: 100px;
+    text-align: center;
+}
+
+.addaduser-activity-logs-modal-timestamp {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: -1rem; /* Adjust to move it closer to the title */
+    margin-bottom: 1rem;
+    text-align: right;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 0.5rem;
+}
+
+.addaduser-activity-logs-controls-wrapper {
+    display: flex;
+    flex-direction: column; /* Default to column for small screens */
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+    .addaduser-activity-logs-controls-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Search Box Container */
+.addaduser-activity-logs-search-box {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.addaduser-activity-logs-search-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 0 8px;
+}
+
+.search-icon {
+    color: #888;
+    font-size: 16px;
+}
+
+.clear-search-icon {
+    color: #aaa;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.clear-search-icon:hover {
+    color: #555;
+}
+
+/* Hide the default clear button in some browsers */
+.addaduser-activity-logs-search-input::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+.addaduser-activity-logs-search-input::-webkit-search-decoration,
+.addaduser-activity-logs-search-input::-webkit-search-cancel-button,
+.addaduser-activity-logs-search-input::-webkit-search-results-button,
+.addaduser-activity-logs-search-input::-webkit-search-results-decoration {
+    display: none;
+}
+
+/* ========================================================== */
+/* EXISTING CSS Adjustments (if needed) */
+/* ========================================================== */
+
+/* Ensure the pagination container aligns correctly with the new search box */
+.addaduser-activity-logs-pagination-container {
+    display: flex;
+    flex-direction: column; /* Start with column layout for responsiveness */
+    align-items: center;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .addaduser-activity-logs-pagination-container {
+        flex-direction: row;
+        justify-content: flex-end; /* Align to the right for desktop */
+        flex-grow: 1; /* Allow it to take up available space */
+    }
+}
+
+/* Adjust the pagination controls to have a clean look */
+.addaduser-activity-logs-pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.addaduser-activity-logs-record-info {
+    font-size: 13px;
+    color: #666;
+    margin-right: 15px;
+}
+
+.addaduser-activity-logs-rows-per-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.addaduser-activity-logs-rows-per-page select {
+    padding: 4px 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Styling for 'No results found' message */
+.addaduser-activity-logs-no-logs {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #888;
+    border: 2px dashed #e0e0e0;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}

@@ -1,0 +1,614 @@
+/* All CSS styles are defined below, as requested by the user. */
+
+/* Custom Font Definition */
+@font-face {
+    font-family: 'CallistaCustomFont';
+    src: url('../fonts/Callista.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+   
+  /* General Layout */
+  .ad-user-page-container {
+    padding: 1rem;
+    background-color: #f9fafb;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   
+  .ad-user-main-header {
+    width: 100%;
+    max-width: 64rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+   
+  .ad-user-main-title h1 {
+    font-family: 'CallistaCustomFont', sans-serif;
+    color: #df3435;
+    margin-bottom: 30px !important;
+  }
+  
+  .admin-dashboard-header-fontstyle {
+    color: #143264;
+  }
+  
+   
+  .ad-user-main-subtitle {
+    color: #6b7280;
+    margin-top: 0.5rem;
+  }
+   
+  /* Main Card Container */
+  .ad-user-card-container {
+    width: 100%;
+    max-width: 85rem;
+    background-color: #ffffff;
+    border-radius: 0.6rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.01);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+   
+  .ad-user-card-container:hover {
+    transform: scale(1.01);
+  }
+   
+  /* Tab Navigation */
+  .ad-user-tabs {
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+  }
+   
+  .ad-user-tab {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    border-bottom: 2px solid transparent;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+   
+  .ad-user-tab:hover {
+    color: #ffffff;
+    border-color: #d1d5db;
+  }
+   
+  .ad-user-tab-active-single {
+    color: #007bff;
+    border-color: #007bff;
+    background-color: #f0f8ff;
+  }
+   
+  .ad-user-tab-active-bulk {
+    color: #e63946;
+    border-color: #e63946;
+    background-color: #ffe6e6;
+  }
+
+  .ad-user-tab-active-reports {
+    color: #007bff;
+    border-color: #007bff;
+    background-color: #f0f8ff;
+  }
+   
+  .ad-user-form-content {
+    animation: fadeInUp 0.5s ease-out;
+  }
+   
+  /* Single User Form */
+  .ad-single-user-form, .ad-multiple-user-form {
+    padding: 2rem;
+  }
+   
+  .ad-single-user-header, .ad-multiple-user-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2a2a2a;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+   
+  .ad-single-user-icon { color: #007bff; }
+  .ad-multiple-user-icon { color: #e63946; }
+   
+  .ad-single-user-form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+   
+  @media (min-width: 768px) {
+    .ad-single-user-form-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+   
+  .ad-single-user-form-group {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: column;
+  }
+   
+  .ad-single-user-full-width {
+    grid-column: 1 / -1;
+  }
+   
+  .ad-single-user-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+  }
+   
+  .ad-single-user-input-container, .ad-single-user-select-container {
+    position: relative;
+  }
+   
+  .ad-single-user-input, .ad-single-user-select {
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  /* This new rule adds padding to the right for password inputs to make space for the eye icon. */
+  .ad-single-user-form-group:has(.ad-password-toggle-icon) input {
+    padding-right: 2.5rem; 
+  }
+   
+  .ad-single-user-select-prefix {
+    position: absolute;
+    left: 0.75rem;       
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* clicks go to the select */
+    font-size: 16px;
+    color: #c9c9c9;   
+    z-index: 2;
+  }
+   
+  .ad-single-user-input:focus, .ad-single-user-select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+   
+  .ad-single-user-input-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+  }
+  
+  /* The new styling for the password toggle icon. */
+  .ad-password-toggle-icon {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .ad-password-toggle-icon:hover {
+    color: #e63946;
+  }
+   
+  .ad-single-user-input-readonly {
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    border: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+    color: #9ca3af;
+    cursor: not-allowed;
+  }
+   
+  .ad-single-user-icon-readonly {
+    color: #d1d5db;
+  }
+   
+  .ad-single-user-select {
+    padding-right: 2.5rem !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+  }
+   
+  .ad-single-user-select-icon {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    pointer-events: none;
+    z-index: 2;
+  }
+   
+  .ad-single-user-button, .ad-multiple-user-button {
+    /* width: 100%; */
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+   
+  .ad-single-user-button {
+    background-color: #007bff;
+  }
+   
+  .ad-single-user-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+   
+  .ad-single-user-button-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+   
+  /* Multiple User Form */
+  .ad-multiple-user-description {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+  }
+   
+  .ad-multiple-user-upload-area {
+    position: relative;
+    border: 2px dashed #d1d5db;
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+   
+  .ad-multiple-user-upload-area:hover {
+    border-color: #007bff;
+  }
+   
+  .ad-multiple-user-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+   
+  .ad-multiple-user-upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  .ad-multiple-user-upload-icon {
+    color: #9ca3af;
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+  }
+   
+  .ad-multiple-user-upload-text {
+    color: #6b7280;
+    font-weight: 500;
+  }
+   
+  .ad-multiple-user-upload-subtext {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 0.25rem;
+  }
+   
+  .ad-multiple-user-button {
+    background-color: #e63946;
+  }
+   
+  .ad-multiple-user-button:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+   
+  .ad-multiple-user-button-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+   
+  /* Message Styles */
+  .ad-user-messages {
+    padding: 1.5rem;
+  }
+   
+  .ad-user-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeInUp 0.5s ease-out;
+  }
+   
+  .ad-user-message-success {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  .ad-user-message-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+  .ad-user-message-info {
+    background-color: #dbeafe;
+    color: #1e40af;
+  }
+   
+  .ad-user-icon-success { color: #10b981; }
+  .ad-user-icon-error { color: #ef4444; }
+  .ad-user-icon-info { color: #3b82f6; }
+   
+  .ad-user-message-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+   
+  .ad-user-tabs span{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+  }
+  
+  /* Styling for the Bulk Report container */
+.ad-bulk-report-container {
+    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .ad-bulk-report-header {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2a2a2a;
+    margin-bottom: 1rem;
+  }
+  
+  .ad-bulk-report-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .ad-bulk-report-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
+  
+  .ad-bulk-report-item-success {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .ad-bulk-report-item-failed {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+  
+  .ad-bulk-report-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ad-bulk-report-user-info {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .ad-bulk-report-status-text {
+    font-size: 0.8rem;
+    color: #4b5563; /* Use a neutral color for status text */
+  }
+  
+  .ad-bulk-report-item-failed .ad-bulk-report-status-text {
+    color: #721c24; /* Make the failure reason stand out */
+  }
+
+  .ad-user-message-warning {
+    background-color: #fff3cd;
+    color: #664d03;
+    border-color: #ffecb5;
+  }
+  
+  .ad-user-icon-warning {
+    color: #664d03;
+  }
+
+
+  .ad-create-ou-container{
+    padding: 25px;
+  }
+
+
+  /* OU TAB STYLES */
+  .ad-create-ou-container {
+    padding: 25px;
+  }
+  
+  .ad-ou-boxes-container {
+    /* display: flex;
+    justify-content: space-between; */
+     display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 boxes per row */
+    gap: 20px;
+  }
+  
+  .ou-box {
+    /* flex: 1; */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .ou-box-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .ou-box.active {
+    border-color: #007bff;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2);
+  }
+  
+  
+  .custom-dropdown {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin-bottom: 8px;
+    background: #fff;
+  }
+  
+  .search-icon {
+    margin-right: 8px;
+    color: #888;
+    font-size: 14px;
+  }
+  
+  .search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+  }
+  
+  
+  .ad-multiple-user-header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .ad-multiple-user-header-button{
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .ad-multiple-user-header-button-icon{
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  /* Styles for the password constraints list */
+.ad-single-user-constraints-list {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  grid-column: span 2;
+}
+
+.ad-single-user-constraints-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ad-single-user-constraints-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.ad-single-user-constraints-list li::before {
+  content: '•';
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.ad-single-user-constraints-list li.valid {
+  color: #28a745;
+}
+
+.ad-single-user-constraints-list li.valid::before {
+  content: '✓';
+  color: #28a745;
+}
+
+.ad-single-user-constraints-list li.invalid {
+  color: #dc3545;
+}
+
+.ad-single-user-constraints-list li.invalid::before {
+  content: '×';
+  color: #dc3545;
+}
+
+/* Style for the mobile number input error */
+.ad-single-user-form-group .input-error {
+  border-color: #dc3545 !important;
+}
+
+.ad-validation-error {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-left: 0;
+}

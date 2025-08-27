@@ -1,0 +1,113 @@
+/* OTP Timer Circle */
+.otp-timer-circle {
+    width: 100px; /* Adjust width */
+    height: 160px; /* Adjust height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Styling for the Timer Text */
+  .otp-timer-progress .CircularProgressbar-text {
+    fill: #df3435 !important; /* White color for visibility */
+    font-size: 18px; /* Adjust text size */
+    font-weight: bold; /* Make it bold */
+    text-anchor: middle; /* Ensure text is centered */
+    dominant-baseline: middle; /* Align text properly */
+  }
+
+  .otp-timer-expired{
+    color: #df3435;
+    padding-bottom: 20px !important;
+  }
+  
+  
+
+/* .otp-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.otp-modal-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 350px;
+    text-align: center;
+    position: relative;
+}
+
+.otp-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.otp-modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: rgb(24, 24, 24);
+}
+
+.otp-modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.otp-input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 20px;
+    text-align: center !important;
+}
+
+.otp-modal-overlay .ui.input>input{
+    text-align: center !important;
+    padding: 0px !important;
+}
+
+.otp-input-box {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    text-align: center !important;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+    color: black !important;
+    padding: 0px !important;
+}
+
+.otp-modal-verify {
+    width: 100%;
+    background-color: #2185d0;
+    color: white;
+    font-weight: bold;
+}
+
+.otp-modal-verify[disabled] {
+    background-color: #bbb;
+}
+
+.message {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.otp-timer{
+    color: #2185d0;
+} */

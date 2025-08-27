@@ -1,0 +1,180 @@
+.admin-dashboard-header-fontstyle h1 {
+    font-family: 'CallistaCustomFont', sans-serif;
+    color: #df3435;
+    margin-bottom: 30px !important;
+    padding: 10px 0px 0px 20px;
+}
+
+.schedule-table-container {
+    margin: 16px 0;
+  }
+  
+  .schedule-table-container h2 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .schedule-table {
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .schedule-table .ant-table-thead > tr > th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    padding: 16px;
+  }
+  
+  .schedule-table .ant-table-tbody > tr > td {
+    padding: 12px 16px;
+  }
+  
+  .schedule-table .ant-table-tbody > tr:hover > td {
+    background-color: #f9f9f9;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .schedule-table .ant-table-thead > tr > th,
+    .schedule-table .ant-table-tbody > tr > td {
+      padding: 8px;
+      font-size: 14px;
+    }
+    
+    .schedule-table-container h2 {
+      font-size: 16px;
+    }
+  }
+
+
+  .schedule-tabs-container {
+    width: webbkit-fill-available;;
+    margin: 0 auto;
+    padding: 0 10px;
+    
+  }
+  
+  .schedule-tabs-container h1 {
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+  }
+  
+  .schedule-tabs {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+  }
+  
+  .schedule-tabs .ant-tabs-nav {
+    margin-bottom: 16px;
+  }
+  
+  .schedule-tabs .ant-tabs-tab {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+  
+  .schedule-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #4CAF50;
+  }
+  
+  .schedule-tabs .ant-tabs-ink-bar {
+    background-color: #4CAF50;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .schedule-tabs-container {
+      padding: 16px;
+    }
+    
+    .schedule-tabs-container h1 {
+      font-size: 20px;
+    }
+    
+    .schedule-tabs .ant-tabs-tab {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+  }
+
+  .status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .status-badge.active {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+  }
+  
+  .status-badge.in_active {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+    border: 1px solid rgba(244, 67, 54, 0.2);
+    text-transform: capitalize;
+  }
+
+  .add-item-button {
+    position: relative;
+    width: fit-content; /* 36 * 0.25rem */
+    height: 2.5rem; /* 10 * 0.25rem */
+    border: 1px solid #22c55e; /* green-500 */
+    background-color: #22c55e;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 20px;
+  }
+  
+  .add-item-text {
+    padding: 0 10px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: white; /* gray-200 */
+    transition: transform 0.3s ease;
+    letter-spacing: 1px;
+  }
+  
+  .add-item-icon {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 2.5rem;
+    background-color: #22c55e;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+  }
+  
+  .add-item-button:hover .add-item-text {
+    transform: translateX(5rem); /* same as Tailwind's translate-x-20 */
+  }
+  
+  .add-item-button:hover .add-item-icon {
+    transform: translateX(0);
+    width: 100%;
+  }
+  
+  .plus-icon {
+    width: 2rem;
+    color: white;
+  }
+  

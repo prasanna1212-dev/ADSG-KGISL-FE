@@ -1,0 +1,143 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  background: #f3f3f3;
+}
+
+.buttons {
+  margin-top: 6px;
+  margin-left: 80px;
+  text-align: center;
+}
+
+.login-icon{
+  font-size: 25px;
+}
+
+.blob-btn {
+  z-index: 1;
+  position: relative;
+  padding: 40px 100px; /* Increased padding for a larger button */
+  text-align: center;
+  text-transform: uppercase;
+  color: #BF2031;
+  font-size: 24px; /* Larger font size */
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+  border: none;
+  outline: none;
+  border-radius: 30px; /* Rounded edges */
+  backdrop-filter: blur(10px); /* Glassmorphism blur */
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blob-btn:hover {
+  color: #ffffff;
+  background-color: rgba(189, 13, 7, 0.7);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.blob-btn__inner {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+.blob-btn__blob {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: #BF2031;
+  border-radius: 50%;
+  transform: translateY(150%) scale(1.9);
+  transition: transform 0.45s ease;
+}
+
+.blob-btn__blob:nth-child(1) {
+  left: 0;
+}
+
+.blob-btn__blob:nth-child(2) {
+  left: 25%;
+  transition-delay: 0.1s;
+}
+
+.blob-btn__blob:nth-child(3) {
+  left: 50%;
+  transition-delay: 0.2s;
+}
+
+.blob-btn__blob:nth-child(4) {
+  left: 75%;
+  transition-delay: 0.3s;
+}
+
+.blob-btn:hover .blob-btn__blob {
+  transform: translateY(0) scale(1.4);
+}
+
+
+
+/* Small Devices (Mobile, 320px to 480px) */
+@media (max-width: 480px) {
+  .blob-btn {
+    padding: 20px 40px; /* Reduced padding for smaller buttons */
+    font-size: 16px; /* Smaller font size */
+    border-radius: 20px; /* More rounded edges for compact buttons */
+    margin-right: 50px !important;
+  }
+}
+
+/* Medium Devices (Tablets, 481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .blob-btn {
+    padding: 30px 60px; /* Adjusted padding for medium devices */
+    font-size: 18px; /* Medium font size */
+    border-radius: 25px; /* Slightly less rounded edges */
+  }
+}
+
+/* Large Devices (Desktops, 769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .blob-btn {
+    padding: 35px 80px; /* Approaching the original size */
+    font-size: 22px;
+    border-radius: 28px;
+  }
+}
+
+/* Extra Large Devices (Wide Screens, 1025px and above) */
+@media (min-width: 1025px) {
+  .blob-btn {
+    padding: 40px 100px; /* Original size for large screens */
+    font-size: 24px;
+    border-radius: 30px;
+  }
+}
+
+/* Adjustments for Consistency */
+.blob-btn {
+  margin: 10px; /* Ensures spacing around the button */
+  display: inline-block; /* Ensures alignment with other elements */
+  text-shadow: 1px 1px;
+}

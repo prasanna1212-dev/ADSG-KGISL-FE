@@ -1,0 +1,263 @@
+/* SignUpModal.css */
+
+.signup-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+ 
+.loader-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent backdrop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Make sure it's on top of other elements */
+  }
+
+.signup-modal-container {
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    background: rgba(255, 255, 255, 0.1) !important; /* Transparent white background */
+    backdrop-filter: blur(6px) !important; /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Subtle border */
+    position: relative;
+    text-align: center;
+}
+
+.signup-modal-title {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.signup-modal-form .field {
+    margin-bottom: 15px;
+}
+
+.signup-modal-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.signup-modal-form input:focus {
+    border-color: #1a73e8;
+}
+
+.signup-modal-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-modal-form button:hover {
+    background-color: #155bb5;
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-icon:hover {
+    color: #1a73e8;
+}
+
+.password-constraints {
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+.password-constraints p {
+    margin: 4px 0;
+}
+
+.email-constraints {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .email-constraints p {
+     margin: 4px 0;
+    transition: color 0.3s ease;
+  }
+
+.password-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle-icon {
+    margin-left: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #333;
+}
+
+.ad-join-upn {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.ad-join-upn .domain {
+    padding-left: 8px;
+    color: #666;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.ad-join-upn input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 1rem;
+    padding: 0 8px;
+}
+
+
+
+/* Responsive Styles */
+
+/* Mobile (up to 480px) */
+@media (max-width: 480px) {
+    .signup-modal-container {
+        width: 90%;
+        padding: 20px;
+        height: 70%;
+        overflow-y: scroll;
+    }
+    
+    .signup-modal-title {
+        font-size: 1.5rem;
+    }
+
+    .signup-modal-form button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .password-constraints {
+        font-size: 0.8rem;
+    }
+
+    .close-icon {
+        top: 5px;
+        right: 5px;
+    }
+}
+
+/* Tablet (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .signup-modal-container {
+        width: 80%;
+        padding: 25px;
+        height: 80%;
+        overflow-y: scroll;
+    }
+
+    .signup-modal-title {
+        font-size: 1.6rem;
+    }
+
+    .signup-modal-form input,
+    .signup-modal-form button {
+        font-size: 1rem;
+    }
+}
+
+/* Laptop (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .signup-modal-container {
+        width: 60%;
+        padding: 30px;
+        height: 90%;
+        overflow-y: scroll;
+    }
+    
+    .signup-modal-title {
+        font-size: 1.7rem;
+    }
+}
+
+/* Desktop (1025px to 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+    .signup-modal-container {
+        width: 600px;
+        padding: 35px;
+        /* height: 85%; */
+        overflow-y: scroll;
+    }
+}
+
+/* TV / Extra Large Screens (1921px and up) */
+@media (min-width: 1921px) {
+    .signup-modal-container {
+        width: 700px;
+        padding: 40px;
+    }
+    
+    .signup-modal-title {
+        font-size: 2rem;
+    }
+
+    .signup-modal-form input,
+    .signup-modal-form button {
+        font-size: 1.2rem;
+    }
+
+    .password-constraints {
+        font-size: 1rem;
+    }
+}

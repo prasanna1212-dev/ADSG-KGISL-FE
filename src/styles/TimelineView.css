@@ -1,0 +1,14 @@
+/* TimelineView.css */
+.timeline-view {
+    padding: 20px;
+  }
+  
+  .timeline-paper {
+    padding: 15px;
+    background: #f5f5f5;
+  }
+  
+  .timeline-view h4 {
+    margin-bottom: 20px;
+  }
+  
